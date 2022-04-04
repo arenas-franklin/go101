@@ -37,10 +37,39 @@ Documentação:   https://go.dev/
 
 para rodar o programa 
 ```go lang
-go run nome-programa.go
+    go run nome-programa.go
+
+// ou 
+
+    go run .
 ```
 
 para criar umarquivo binário
 ```go lang
     go build nome-programa.go
+```
+
+**Chamar pacote externo**
+
+pesquisar o pacotedesejando no site:
+https://pkg.go.dev/
+
+adiciona o pacote no seu arquivo
+
+```go lang
+package main
+
+import "fmt"
+
+import "rsc.io/quote"
+
+func main() {
+    fmt.Println(quote.Go())
+}
+```
+
+adicone o novo mod requerido e sum com seguinte comando no terminal:
+
+```go lang
+    go mod tidy
 ```
